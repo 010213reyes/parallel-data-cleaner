@@ -35,7 +35,41 @@ Instalar las dependencias:
 
 ```powershell
 python -m pip install -r requirements.txt
+
 ```
+
+
+**Fase 2 — Programación concurrente y paralela**
+
+Implementaciones disponibles:
+
+- Secuencial: procesamiento archivo por archivo.
+- Hilos: procesamiento concurrente mediante ThreadPoolExecutor.
+- Procesos: procesamiento paralelo mediante ProcessPoolExecutor.
+
+Las tres implementaciones utilizan el mismo motor de limpieza.
+
+## Ejecución
+
+Colocar los archivos CSV o XLSX en `data/raw/`.
+
+Ejecutar:
+
+python main.py
+
+Seleccionar el modo de procesamiento desde el menú.
+
+Los resultados se almacenan en `data/cleaned/` y los reportes en `reports/`.
+
+## Pruebas
+
+Ejecutar:
+
+python -m unittest discover -s tests -v
+
+
+
+
 
 ## Ejecución
 
