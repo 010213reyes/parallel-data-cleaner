@@ -1,0 +1,26 @@
+# Entorno virtual
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Archivos temporales
+*.tmp
+*.log
+
+# Datos de entrada y salida
+data/raw/*
+data/cleaned/*
+
+# Resultados generados
+reports/*
+
+# Conservar carpetas vacías
+!data/raw/.gitkeep
+!data/cleaned/.gitkeep
+!reports/.gitkeep
+
+# VS Code
+.vscode/
+
