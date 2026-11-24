@@ -1,0 +1,6 @@
+file,original_rows,cleaned_rows,duplicates_removed,original_nulls,final_nulls,time_seconds,status
+Historical Product Demand.xlsx,1715,1656,59,0,0,1.5277,OK
+ai_models_pricing_raw_20260803_231318.csv,26,26,0,0,0,0.0794,OK
+productos.csv,100000,100000,0,0,0,0.9298,OK
+train.csv,891,891,0,866,866,0.1166,OK
+ventas_sucias.csv,630,600,30,504,480,0.0651,OK

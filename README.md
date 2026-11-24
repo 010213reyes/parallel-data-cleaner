@@ -256,7 +256,17 @@ Las seis pruebas fueron aprobadas.
 
 ## 11. Evaluación experimental
 
-Se utilizaron tres escenarios de datos sintéticos generados mediante semillas reproducibles.
+La aplicación está diseñada para procesar archivos CSV y XLSX
+de origen real o sintético, independientemente de su temática
+y estructura de columnas.
+
+Para la evaluación controlada del rendimiento se utilizaron
+tres escenarios de datos generados artificialmente mediante
+semillas reproducibles, con el propósito de garantizar
+condiciones equivalentes entre las estrategias evaluadas.
+
+El uso de estos datos experimentales no restringe el
+procesamiento de datasets reales.
 
 | Escenario | Archivos | Filas por archivo | Filas totales |
 |---|---:|---:|---:|
@@ -423,7 +433,9 @@ La captura del entorno fue realizada después de las mediciones experimentales o
 
 ## 16. Limitaciones
 
-- Los experimentos de rendimiento utilizan datos sintéticos en formato CSV.
+- - Las mediciones experimentales de rendimiento se realizaron
+  con archivos CSV generados de forma controlada. La aplicación
+  admite archivos CSV y XLSX reales.
 - Los archivos XLSX se procesan considerando únicamente la primera hoja.
 - No se conserva el formato visual original de Excel.
 - Los valores faltantes no se imputan automáticamente.
@@ -446,6 +458,38 @@ El proyecto fue desarrollado mediante ramas independientes de Git.
 | docs/entrega-final | Documentación académica y técnica |
 
 La versión funcional de la aplicación se encuentra identificada mediante la etiqueta v1.0.0.
+
+
+
+## Validación funcional con archivos de distintas fuentes
+
+Además de la evaluación experimental controlada, se realizó
+una prueba funcional utilizando cinco archivos de diferentes
+fuentes, estructuras y formatos.
+
+El lote incluyó cuatro archivos CSV y un archivo XLSX.
+
+| Método | Archivos procesados | Errores | Tiempo (s) | Speedup |
+|---|---:|---:|---:|---:|
+| Secuencial | 5 | 0 | 2.6654 | 1.000 |
+| Hilos | 5 | 0 | 1.5313 | 1.741 |
+| Procesos | 5 | 0 | 2.4720 | 1.078 |
+
+Las tres estrategias procesaron correctamente todos los
+archivos sin necesidad de modificar el código fuente.
+
+En esta prueba, la implementación concurrente mediante hilos
+redujo el tiempo de ejecución aproximadamente un 42.55 %
+respecto a la implementación secuencial.
+
+Estos resultados corresponden a una demostración funcional
+complementaria y no sustituyen las 105 mediciones de la
+evaluación experimental controlada.
+
+La aplicación admite datasets de origen real o sintético,
+sin depender de una estructura de columnas específica.
+
+
 
 ## 18. Conclusiones
 
